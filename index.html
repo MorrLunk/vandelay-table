@@ -8,7 +8,7 @@
 <meta name="ai-disclosure" content="Vandelay is an AI assistant. Elements marked data-ai-generated are machine-generated; Emil, Anna and Dakota are simulated participants in this prototype.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,400&family=Vina+Sans&display=swap">
 <style>
 :root{
   color-scheme: light;
@@ -46,7 +46,7 @@ input{caret-color:var(--ink)}
 .num{font-variant-numeric:tabular-nums}
 .small{font-size:0.8125rem;color:var(--ink-2)}
 .tiny{font-size:0.75rem;color:var(--muted)}
-.wordmark{display:block;image-rendering:pixelated;image-rendering:crisp-edges}
+.wordmark{display:block;font-family:"Vina Sans",var(--serif);font-weight:400;font-size:clamp(52px,16vw,92px);line-height:0.95;letter-spacing:0.005em;color:var(--ink);max-width:80vw}
 .pixel{image-rendering:pixelated;image-rendering:crisp-edges}
 
 .top{position:sticky;top:0;z-index:20;background:var(--ground);padding:calc(8px + var(--safe-t)) 12px 0;border-bottom:1px solid var(--line)}
@@ -73,13 +73,13 @@ input{caret-color:var(--ink)}
 .here{display:flex;align-items:center;gap:6px;font-size:0.75rem;color:var(--muted);white-space:nowrap;padding-bottom:4px}
 .ctx{margin:10px 0 0;font-size:0.875rem;color:var(--ink-2)}
 .vandelay{display:grid;grid-template-columns:20px 1fr;gap:10px;margin:14px 0 0;align-items:start}
-.vandelay img{width:16px;height:20px;image-rendering:pixelated;margin-top:1px}
+.vandelay .ai-g{font-size:23px;margin-top:1px;vertical-align:-2px}
 .vandelay p{margin:2px 0 0;font-family:var(--serif);font-style:italic;font-size:1.125rem;line-height:1.3}
 .ai-lab{display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-family:var(--sans);font-style:normal}
 .ai-lab b{font-weight:600;color:var(--ink);border:1px solid var(--ink);border-radius:2px;padding:0 4px;font-size:0.75rem;line-height:1.4}
-.ai-g{width:16px;height:20px;image-rendering:pixelated;vertical-align:-4px}
+.ai-g{display:inline-block;font-family:"Vina Sans",var(--serif);font-weight:400;font-size:23px;line-height:1;letter-spacing:0;color:var(--ink);vertical-align:-4px}
 .prov{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:0.8125rem;color:var(--ink-2)}
-.prov .ai-g{width:13px;height:16px}
+.prov .ai-g{font-size:18px;vertical-align:-3px}
 .disc{margin:14px 0 0;font-size:0.875rem;color:var(--ink-2);line-height:1.5}
 .disc .btn.link{font-size:0.875rem;min-height:32px;padding:0}
 .how h2{font-family:var(--serif);font-weight:400;font-size:1.25rem;margin:18px 0 4px}
@@ -122,7 +122,7 @@ input{caret-color:var(--ink)}
 .seal::before,.seal::after{content:"";position:absolute;width:6px;height:6px;border:1px solid var(--ink);background:var(--ground)}
 .seal::before{left:-3.5px;top:-3.5px;border-right:0;border-bottom:0}
 .seal::after{right:-3.5px;bottom:-3.5px;border-left:0;border-top:0}
-.seal img{width:14px;height:14px;image-rendering:pixelated}
+.seal .ai-g{font-size:17px;vertical-align:-3px}
 @keyframes stamp{0%{transform:scale(1.2) rotate(-3deg);opacity:0}100%{transform:none;opacity:1}}
 .others-toggle{margin-top:18px}
 .collapsed{display:none}
@@ -210,7 +210,7 @@ input{caret-color:var(--ink)}
 .msg .whoL{font-size:0.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
 .msg .txt{font-size:0.9375rem;line-height:1.4}
 .msg.vandelay .txt{font-family:var(--serif);font-size:1.1562rem;line-height:1.3;font-style:italic}
-.msg img.g{width:28px;height:28px;image-rendering:pixelated}
+.msg .ai-g{font-size:30px;vertical-align:-5px}
 .composer{display:flex;gap:8px;align-items:flex-end}
 .composer .input{font-family:var(--sans);font-size:1rem;min-height:48px;padding:10px 0}
 .quick{display:flex;gap:8px;overflow-x:auto;padding:6px 16px 12px;scrollbar-width:none;margin:0 -16px}
@@ -282,7 +282,7 @@ input{caret-color:var(--ink)}
 
 <section class="view splash" id="v-splash">
   <div class="hero">
-    <canvas class="wordmark" id="wm" width="1" height="1" aria-label="vandelay" role="img"></canvas>
+    <div class="wordmark" id="wm" aria-label="vandelay" role="img">vandelay</div>
     <p class="label" style="margin:14px 0 0">A travel app. Built on human taste.</p>
     <div class="cover" id="cover" aria-hidden="true"><div class="cap"><b>Marrakech, Morocco</b>Guéliz. Baromètre. Le Jardin.<br>Four nights at Riad Jardin Secret.</div></div>
     <p class="display d3" style="max-width:300px">Bring everyone. Have a say. Split the bill.</p>
@@ -502,14 +502,13 @@ const COLORS = ['#8A3A2A','#5A3D8A','#4B4B9A','#7A2E5A','#4A5A1A','#2F5D5D']; //
 function bitmap(rows, color='#17150F'){ const w=rows[0].length, h=rows.length, c=document.createElement('canvas'); c.width=w; c.height=h; const x=c.getContext('2d'); x.fillStyle=color; rows.forEach((r,y)=>[...r].forEach((ch,i)=>{ if(ch==='X') x.fillRect(i,y,1,1); })); return c.toDataURL(); }
 const GLASS = bitmap(['..XXXXXX..','.X......X.','.X......X.','.X.XXXXXX.','.XXXXXXXX.','.XXXXXXXX.','..XXXXXX..','...XXXX...','....XX....','....XX....','....XX....','..XXXXXX..','.XXXXXXXX.']);
 const HORSE = bitmap(['.....XX.......','....XXXX......','...XXXXXX.....','..XX.XXXXX....','.XX..XXXXXXX..','.....XXXXXXXX.','.....XXXXXX.X.','....XXXXXXX...','...XX..XXXX...','..XX....XX....','.XX.....XX....','.XX....XX.....','XX.....XX.....','X.....XX......']);
-const HGLYPH = bitmap(['........','........','........','XXX..XXX','.X....X.','.X....X.','.XX..XX.','..X..X..','..XXXX..','...XX...']);
-const aiGlyph = () => `<img class="ai-g" src="${HGLYPH}" alt="Vandelay, AI">`;
+/* The AI marker is a Vina Sans V, not a pixel bitmap. role + aria-label keep the accessible name
+   identical to the old <img alt>, so the Article 50 marking and the axe-core result are unchanged. */
+const aiGlyph = () => `<span class="ai-g" role="img" aria-label="Vandelay, AI">V</span>`;
 const aiLabel = () => `<span class="ai-lab">Vandelay · <b>AI</b></span>`;
-async function drawWordmark(){ try{ await document.fonts.load('400 30px "Fraunces"'); }catch(e){} const c=$('#wm'), WORD='vandelay', F='400 30px "Fraunces", Georgia, serif', Hh=34, s=3; const x=c.getContext('2d');
-  /* measure first: the wordmark is longer than the canvas used to be, so size the backing store to the word rather than clipping it */
-  x.font=F; const W=Math.ceil(x.measureText(WORD).width)+4;
-  c.width=W; c.height=Hh; c.style.width=(W*s)+'px'; c.style.height=(Hh*s)+'px'; c.style.maxWidth='80vw';
-  x.clearRect(0,0,W,Hh); x.fillStyle='#17150F'; x.font=F; x.fillText(WORD, Math.round((W-x.measureText(WORD).width)/2), 25); }
+/* The wordmark is live text in Vina Sans, not a pixel-scaled canvas. Kept as a no-op so the
+   boot sequence below is unchanged; the font loads through the stylesheet link in the head. */
+async function drawWordmark(){ try{ await document.fonts.load('400 92px "Vina Sans"'); }catch(e){} }
 
 /* ---------- Plates ---------- */
 function hashStr(s){ let h=2166136261; for(const ch of s){ h^=ch.charCodeAt(0); h=Math.imul(h,16777619); } return h>>>0; }
